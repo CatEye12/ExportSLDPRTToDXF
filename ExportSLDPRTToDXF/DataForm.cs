@@ -72,7 +72,6 @@ namespace ExportSLDPRTToDXF
         {  
             SettingsForm settings_frm = new SettingsForm();
             settings_frm.ShowDialog();
-           
         }
        
         /// <summary>
