@@ -26,7 +26,6 @@ namespace ExportSLDPRTToDXF.Models
         public string FileName { get; set; }
         public int IDPDM { get; set; }
         public string FilePath { get; set; }
-
         public string Partition { get; set; }
 
         

@@ -8,8 +8,8 @@ using System.IO;
 using System.Runtime.InteropServices;
 using EPDM.Interop.EPDMResultCode;
 using Patterns.Observer;
-using System.Threading;
 using System.Deployment.Application;
+using ExportToXMLLib;
 
 namespace ExportSLDPRTToDXF
 {
@@ -100,6 +100,7 @@ namespace ExportSLDPRTToDXF
             }
         }
 
+
         /// <summary>
         /// Occurs when selected eny item in the SearchResultList
         /// </summary>
@@ -117,6 +118,7 @@ namespace ExportSLDPRTToDXF
             }
         }
 
+
         /// <summary>
         /// Occurs when selected eny item in the ConfigurationsComboBox
         /// </summary>
@@ -128,7 +130,9 @@ namespace ExportSLDPRTToDXF
             SpecificationDataGrid.DataSource = null;
             FillDataGridSpecification(ConfigurationsComboBox.SelectedItem.ToString());
         }
+
         Specification[] specifications;
+
         /// <summary>
         /// Fill data grid specification
         /// </summary>
@@ -289,10 +293,12 @@ namespace ExportSLDPRTToDXF
                                 DxfBulder.Build(eachSpec.FilePath, eachSpec.IDPDM, eachSpec.Version);
                                 countIterations++;
                         }
-
                     }
                 }
-                
+               Export export = new Export(FileModelPdm.Path);
+
+               export.XML();
+
             }
             SpecificationDataGrid.DataSource = Specification.ConvertToViews( specifications);
             MessageObserver.Instance.SetMessage($"Created {countIterations} new dxf files to temp folder");

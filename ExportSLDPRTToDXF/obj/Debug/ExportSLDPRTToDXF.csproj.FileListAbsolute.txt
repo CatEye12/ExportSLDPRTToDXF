@@ -83,3 +83,26 @@ D:\Project\Source\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDX
 D:\Project\Source\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.SettingsForm.resources
 D:\Project\Source\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\SolidWorksLibrary.dll
 D:\Project\Source\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\EPDM.Interop.epdm.dll
+C:\Users\kb81\Source\Repos\ExportSLDPRTToDXF2\ExportSLDPRTToDXF\bin\Debug\ExportSLDPRTToDXF.exe.config
+C:\Users\kb81\Source\Repos\ExportSLDPRTToDXF2\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.csproj.ResolveComReference.cache
+C:\Users\kb81\Source\Repos\ExportSLDPRTToDXF2\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.exe
+C:\Users\kb81\Source\Repos\ExportSLDPRTToDXF2\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.pdb
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ExportSLDPRTToDXF.exe.config
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.csproj.ResolveComReference.cache
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.exe
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.pdb
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.DataForm.resources
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.StatusForm.resources
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.SettingsForm.resources
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.Properties.Resources.resources
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.csproj.GenerateResource.Cache
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ExportSLDPRTToDXF.exe
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ExportSLDPRTToDXF.pdb
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\EPDM.Interop.epdm.dll
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\MessageLibrary.pdb
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ServiceConstants.pdb
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\SolidWorksLibrary.pdb
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ExportToXMLLib.dll
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ExportToXMLLib.pdb
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\SolidWorksLibrary.dll

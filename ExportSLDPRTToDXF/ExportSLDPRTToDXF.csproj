@@ -84,6 +84,10 @@
       <HintPath>C:\Program Files\SOLIDWORKS PDM\EPDM.Interop.EPDMResultCode.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="ExportToXMLLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ExportToXMLLib\ExportToXMLLib\bin\Debug\ExportToXMLLib.dll</HintPath>
+    </Reference>
     <Reference Include="MessageLibrary">
       <HintPath>D:\Vlad\PDM-WebService\SolidWorksLibrary\bin\Release\MessageLibrary.dll</HintPath>
     </Reference>
@@ -92,7 +96,7 @@
     </Reference>
     <Reference Include="SolidWorksLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\PdmWebService\SolidWorksLibrary\bin\Release\SolidWorksLibrary.dll</HintPath>
+      <HintPath>..\..\Переделать\PdmWebService-master\SolidWorksLibrary\bin\Release\SolidWorksLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -215,7 +219,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
