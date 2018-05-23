@@ -85,7 +85,7 @@ namespace ExportSLDPRTToDXF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PDMSRV")]
+        [global::System.Configuration.DefaultSettingValueAttribute("pdmsrv")]
         public string SqlServerName {
             get {
                 return ((string)(this["SqlServerName"]));

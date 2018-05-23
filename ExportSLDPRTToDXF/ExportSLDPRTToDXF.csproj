@@ -43,6 +43,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -88,15 +89,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ExportToXMLLib\ExportToXMLLib\bin\Debug\ExportToXMLLib.dll</HintPath>
     </Reference>
-    <Reference Include="MessageLibrary">
-      <HintPath>D:\Vlad\PDM-WebService\SolidWorksLibrary\bin\Release\MessageLibrary.dll</HintPath>
+    <Reference Include="MessageLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\To_REMAKE\PdmWebService\MessageLibrary\bin\Debug\MessageLibrary.dll</HintPath>
     </Reference>
     <Reference Include="ServiceConstants">
-      <HintPath>D:\Vlad\PDM-WebService\SolidWorksLibrary\bin\Release\ServiceConstants.dll</HintPath>
-    </Reference>
-    <Reference Include="SolidWorksLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Переделать\PdmWebService-master\SolidWorksLibrary\bin\Release\SolidWorksLibrary.dll</HintPath>
+      <HintPath>..\..\To_REMAKE\PdmWebService\SolidWorksLibrary\bin\Debug\ServiceConstants.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -112,7 +110,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -221,6 +218,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\To_REMAKE\PdmWebService\SolidWorksLibrary\SolidWorksLibrary.csproj">
+      <Project>{decc61e0-8d25-485f-99f4-d895177c7997}</Project>
+      <Name>SolidWorksLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -34,7 +34,6 @@ namespace ExportSLDPRTToDXF.Models
             List<ISpecificationView> _resultList = new List<ISpecificationView>( );
             foreach (var item in specification)
             {
-                
                 _resultList.Add(item);
             }
             return _resultList;

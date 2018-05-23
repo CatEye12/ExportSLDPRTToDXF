@@ -56,8 +56,8 @@ namespace ExportSLDPRTToDXF.Models.ORM
                     materialID,
                     surfaceArea,
                     new Binary(DXFByte));
-
-                MessageObserver.Instance.SetMessage("Successfully added the cut list to database.", MessageType.System);
+                ////////////////////////////////////////////////////////////////////////////////////////
+                MessageObserver.Instance.SetMessage("Successfully added the cut list to database.   " + IdPdm.ToString(), MessageType.System);
             }
             catch(Exception exception)
             {

@@ -55,7 +55,7 @@ namespace ExportSLDPRTToDXF
             }
             catch (System.Runtime.InteropServices.COMException ex)
             {
-                MessageBox.Show("HRESULT = 0x" + ex.ErrorCode.ToString("X") + " " + ex.Message);
+               // MessageBox.Show("HRESULT = 0x" + ex.ErrorCode.ToString("X") + " " + ex.Message);
             }
             catch (Exception ex)
             {

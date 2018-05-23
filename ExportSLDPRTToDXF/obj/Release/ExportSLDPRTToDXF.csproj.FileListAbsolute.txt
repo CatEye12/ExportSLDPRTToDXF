@@ -22,3 +22,7 @@ C:\Users\Antonyk\Desktop\ExportSLDPRTToDXF\ExportSLDPRTToDXF\ExportSLDPRTToDXF\o
 C:\Users\Antonyk\Desktop\ExportSLDPRTToDXF\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Release\ExportSLDPRTToDXF.exe
 C:\Users\Antonyk\Desktop\ExportSLDPRTToDXF\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Release\ExportSLDPRTToDXF.pdb
 C:\Users\Antonyk\Desktop\ExportSLDPRTToDXF\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Release\ExportSLDPRTToDXF.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Release\ExportSLDPRTToDXF.exe.config
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Release\ExportSLDPRTToDXF.csproj.ResolveComReference.cache
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Release\ExportSLDPRTToDXF.exe
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Release\ExportSLDPRTToDXF.pdb

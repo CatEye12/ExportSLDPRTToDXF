@@ -6,7 +6,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using EPDM.Interop.epdm;
-//using EdmLib;
 using ExportSLDPRTToDXF.Models;
 using EPDM.Interop.EPDMResultCode;
 using Patterns.Observer;
@@ -45,7 +44,6 @@ namespace ExportSLDPRTToDXF
             {
                 edmVeult5.LoginAuto(this.VaultName, 0);
             }
-
         }
 
         /// <summary>
@@ -87,15 +85,13 @@ namespace ExportSLDPRTToDXF
             {
                 IEdmSearch5 Search = default(IEdmSearch5);
                 Search = (IEdmSearch5)(PdmExemplar as IEdmVault7).CreateUtility(EdmUtility.EdmUtil_Search);
-
-
-                //var Search = (PdmExemplar as IEdmVault7).CreateUtility(EdmUtility.EdmUtil_Search);
+                
                 Search.FileName = segmentName;
                 //Search.FindFiles = true;
                 //Search.FindFolders = false;
                 //Search.SetToken(EdmSearchToken.Edmstok_FindFolders, false);
                 int count = 0;
-
+                
                 IEdmSearchResult5 Result = Search.GetFirstResult();
                 
                 while (Result != null)
@@ -137,19 +133,7 @@ namespace ExportSLDPRTToDXF
         public void DownLoadFile(Specification[] sp)
         {
             try
-            {
-                //var batchGetter = (IEdmBatchGet)(PdmExemplar as IEdmVault7).CreateUtility(EdmUtility.EdmUtil_BatchGet);
-                //batchGetter.AddSelectionEx((EdmVault5)PdmExemplar, fileModel.IDPdm, fileModel.FolderId, 0);
-                //if ((batchGetter != null))
-                //{
-                //    batchGetter.CreateTree(0, (int)EdmGetCmdFlags.Egcf_SkipUnlockedWritable);
-                //    batchGetter.GetFiles(0, null);
-                //}
-                //MessageObserver.Instance.SetMessage("Файл " + fileModel.FileName + " с id " + fileModel.IDPdm + " получен локально. путь:" + fileModel.Path);
-
-                //IEdmVault5 vault1 = new EdmVault5();
-                //IEdmVault7 vault2 = (IEdmVault7)PdmExemplar;
-
+            { 
                 IEdmBatchGet batchGetter;
                 IEdmFolder5 aFolder;
                 IEdmFolder5 ppoRetParentFolder;
@@ -157,31 +141,32 @@ namespace ExportSLDPRTToDXF
                 IEdmPos5 aPos;
                 EdmSelItem[] ppoSelection = new EdmSelItem[sp.Count()];
                 int i = 0;
-                batchGetter = (IEdmBatchGet)edmVeult8.CreateUtility(EdmUtility.EdmUtil_BatchGet);
+                
                 foreach (var item in sp)
                 {
-                    aFile = PdmExemplar.GetFileFromPath(item.FilePath, out ppoRetParentFolder);
-                    aPos = aFile.GetFirstFolderPosition();
-                    aFolder = aFile.GetNextFolder(aPos);
-                    ppoSelection[i] = new EdmSelItem();
-                    ppoSelection[i].mlDocID = aFile.ID;
-                    ppoSelection[i].mlProjID = aFolder.ID;
-                    i = i + 1;
-                }
-                
-                batchGetter.AddSelection((EdmVault5)PdmExemplar, ref ppoSelection);
-                batchGetter.CreateTree(0, (int)EdmGetCmdFlags.Egcf_SkipUnlockedWritable + (int)EdmGetCmdFlags.Egcf_SkipExisting + (int)EdmGetCmdFlags.Egcf_SkipLockRefFiles);
+                    try
+                    {
+                        aFile = PdmExemplar.GetFileFromPath(item.FilePath, out ppoRetParentFolder);
+                        aPos = aFile.GetFirstFolderPosition();
+                        aFolder = aFile.GetNextFolder(aPos);
+                        ppoSelection[i] = new EdmSelItem();
+                        ppoSelection[i].mlDocID = aFile.ID;
+                        ppoSelection[i].mlProjID = aFolder.ID;
+                        i = i + 1;
+                    }
+                    catch (Exception)
+                    {
 
-                //var fileCount = batchGetter.FileCount;
-                //var fileList = (IEdmSelectionList6)batchGetter.GetFileList((int)EdmGetFileListFlag.Egflf_GetLocked + (int)EdmGetFileListFlag.Egflf_GetFailed + (int)EdmGetFileListFlag.Egflf_GetRetrieved + (int)EdmGetFileListFlag.Egflf_GetUnprocessed);
+                    }
+                }
+                batchGetter = (IEdmBatchGet)edmVeult8.CreateUtility(EdmUtility.EdmUtil_BatchGet);
+                batchGetter.AddSelection((EdmVault5)PdmExemplar, ref ppoSelection);
+                batchGetter.CreateTree(0, (int)EdmGetCmdFlags.Egcf_SkipUnlockedWritable  + (int)EdmGetCmdFlags.Egcf_SkipLockRefFiles);
 
                 batchGetter.GetFiles(0, null);
             }
             catch (Exception exception)
             {
-                //MessageBox.Show("Неудалось получить файл " + fileModel.FileName + " с id " + fileModel.IDPdm + "; путь:" + fileModel.Path);
-                //MessageObserver.Instance.SetMessage("Неудалось получить файл " + fileModel.FileName + " с id " + fileModel.IDPdm + "; путь:" + fileModel.Path);
-                // throw exception;
                 MessageBox.Show(exception.ToString());
             }
         }
@@ -211,7 +196,10 @@ namespace ExportSLDPRTToDXF
                 string buff = cfgList.GetNext(edmPos);
                 if (buff.CompareTo("@") != 0)
                 {
-                    configurationResaultArray.Add(buff);
+                    if (buff != null)
+                    {
+                        configurationResaultArray.Add(buff);
+                    }
                 }
                 id++;
             }
@@ -220,15 +208,13 @@ namespace ExportSLDPRTToDXF
             return configurationResaultArray.ToArray( );
         }
   
-        private void KillProcsses(string name)
+        public void KillProcsses(string name)
         {
             var processes = System.Diagnostics.Process.GetProcessesByName(name);
             foreach (var process in processes)
             {
                 process.Kill( );
-                //Console.WriteLine("\nFind proccess and kill: " + process);
             }
-
         }
 
         #region bom
@@ -238,7 +224,7 @@ namespace ExportSLDPRTToDXF
             {
                 IEdmFolder5 oFolder;
                 IEdmFile7 EdmFile7 = (IEdmFile7)PdmExemplar.GetFileFromPath(filePath, out oFolder);
-                var bomView = EdmFile7.GetComputedBOM(BoomId, -1, bomConfiguration, 3);
+                var bomView = EdmFile7.GetComputedBOM(BoomId, -1, bomConfiguration, 2);
                 if (bomView == null)
                 {
                     throw new Exception("Computed BOM it can not be null");
@@ -287,24 +273,46 @@ namespace ExportSLDPRTToDXF
         }
         #endregion
 
+
         private IEnumerable<BomShell> BomTableToBomList(DataTable table)
         {
             List<BomShell> BoomShellList = new List<BomShell>(table.Rows.Count);
             try
-            {
-                BoomShellList.AddRange(from DataRow eachRow in table.Rows
-                                       select eachRow.ItemArray into values
-                                       select new BomShell
-                                       { PartNumber = values[0].ToString( ),
-                                           Description = values[1].ToString( ),
-                                           IdPdm = Convert.ToInt32(values[2]),
-                                           Configuration = values[3].ToString( ),
-                                           Version = Convert.ToInt32(values[4]),
-                                           FileName = values[5].ToString( ),
-                                           FolderPath = values[6].ToString( ),
-                                           ObjectType = values[7].ToString( ),
-                                           Partition = values[8].ToString( )
-                                       });
+            {   
+                if (DataForm.settings.BoomId == 8)//если выбрано specification, обращаемся к другому набору колонок
+                {
+                    BoomShellList.AddRange(from DataRow eachRow in table.Rows
+                                           select eachRow.ItemArray into values
+                                           select new BomShell
+                                           {
+                                               PartNumber = values[1].ToString(),
+                                               Description = values[2].ToString(),
+                                               IdPdm = Convert.ToInt32(values[10]),
+                                               Configuration = values[8].ToString(),
+                                               Version = Convert.ToInt32(values[9]),
+                                               FileName = values[11].ToString(),
+                                               FolderPath = values[12].ToString(),
+                                               ObjectType = values[7].ToString(),
+                                               Partition = values[0].ToString()
+                                           });
+                }
+                else
+                {
+                    BoomShellList.AddRange(from DataRow eachRow in table.Rows
+                                           select eachRow.ItemArray into values
+                                           select new BomShell
+                                           { PartNumber = values[0].ToString(),
+                                               Description = values[1].ToString(),
+                                               IdPdm = Convert.ToInt32(values[2]),
+                                               Configuration = values[3].ToString(),
+                                               Version = Convert.ToInt32(values[4]),//добавляет последюню, а не использованную версию
+                                               FileName = values[5].ToString(),
+                                               FolderPath = values[6].ToString(),
+                                               ObjectType = values[7].ToString(),
+                                               Partition = values[8].ToString()
+                                           });
+
+                }
             }
             catch (Exception exception)
             {
@@ -404,8 +412,6 @@ namespace ExportSLDPRTToDXF
 
             #endregion
 
-
-            //Console.WriteLine(pathToFile);
             var retryCount = 2;
             var success = false;
             while (!success && retryCount > 0)
@@ -544,7 +550,7 @@ m4:
                 var filePath = fileModel.FolderPath + "\\" + pathToTempPdf;
                 IEdmFolder5 folder;
                 var aFile = PdmExemplar.GetFileFromPath(filePath, out folder);
-                var pEnumVar = (IEdmEnumeratorVariable8)aFile.GetEnumeratorVariable(); ;
+                var pEnumVar = (IEdmEnumeratorVariable8)aFile.GetEnumeratorVariable(); 
                 pEnumVar.SetVar("Revision", "", fileModel.CurrentVersion);
                 pEnumVar.CloseFile(true);
             }

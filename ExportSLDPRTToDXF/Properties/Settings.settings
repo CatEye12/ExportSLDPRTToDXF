@@ -18,7 +18,7 @@
       <Value Profile="(Default)">SwPlusDB</Value>
     </Setting>
     <Setting Name="SqlServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PDMSRV</Value>
+      <Value Profile="(Default)">pdmsrv</Value>
     </Setting>
     <Setting Name="SQLUser" Type="System.String" Scope="User">
       <Value Profile="(Default)">AirVentsCad</Value>
