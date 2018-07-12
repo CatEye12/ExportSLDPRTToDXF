@@ -224,7 +224,7 @@ namespace ExportSLDPRTToDXF
             {
                 IEdmFolder5 oFolder;
                 IEdmFile7 EdmFile7 = (IEdmFile7)PdmExemplar.GetFileFromPath(filePath, out oFolder);
-                var bomView = EdmFile7.GetComputedBOM(BoomId, -1, bomConfiguration, 2);
+                var bomView = EdmFile7.GetComputedBOM(BoomId, -1, bomConfiguration, (int)EdmBomFlag.EdmBf_ShowSelected);
                 if (bomView == null)
                 {
                     throw new Exception("Computed BOM it can not be null");

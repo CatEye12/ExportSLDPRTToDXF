@@ -10,6 +10,7 @@ using EPDM.Interop.EPDMResultCode;
 using Patterns.Observer;
 using System.Deployment.Application;
 using ExportToXMLLib;
+using SolidWorksLibrary.Builders.Dxf;
 
 namespace ExportSLDPRTToDXF
 {
@@ -236,7 +237,7 @@ namespace ExportSLDPRTToDXF
         /// <param name="e"></param>
         private void UpLoadDxfButton_Click(object sender, EventArgs e)
         {
-            SolidWorksLibrary.Builders.Dxf.DxfBulder DxfBulder = SolidWorksLibrary.Builders.Dxf.DxfBulder.Instance;
+            DxfBulder DxfBulder = DxfBulder.Instance;
             string tempDxfFolder = tempAppFolder;
             int countIterations = 0;
             if (String.IsNullOrEmpty(settings.DxfPath))
@@ -286,23 +287,12 @@ namespace ExportSLDPRTToDXF
                         if (!eachSpec.isDxf && File.Exists(eachSpec.FilePath) && Path.GetExtension(eachSpec.FileName).ToUpper() == ".SLDPRT")
                         {
                             StatusLabel.Text = "Статус: Выгрузка DXF файла " + eachSpec.FileName + "-" + eachSpec.Configuration;
-                            DxfBulder.Build(eachSpec.FilePath, eachSpec.IDPDM, eachSpec.Version);
+                        
+                            DxfBulder.Build(eachSpec.FilePath, eachSpec.IDPDM, eachSpec.Version, eachSpec.Configuration);
                             countIterations++;
                         }
                     }
                 }
-                //try
-                //{
-                //    StatusLabel.Text = "Статус: Выгрузка XML файлов";
-                //    Export export = new Export(FileModelPdm.Path);
-                //    export.XML();
-                //    MessageObserver.Instance.SetMessage("XML noEX: ");
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageObserver.Instance.SetMessage("XML EX: " + ex.StackTrace);
-                //    throw ex;
-                //}
             }
             SpecificationDataGrid.DataSource = Specification.ConvertToViews(specifications);
             MessageObserver.Instance.SetMessage($"Created {countIterations} new dxf files to temp folder");
@@ -311,27 +301,34 @@ namespace ExportSLDPRTToDXF
             #region  load dxf as binary from database  and save as dxf file
             foreach (var item in specificationsQuery)
             {
-                if (AdapterPdmDB.Instance.IsDxf(item.IDPDM, item.Configuration, item.Version))
+                try
                 {
-                    byte[] binary = AdapterPdmDB.Instance.GetDXF(item.IDPDM, item.Configuration, item.Version);
-                    string fileName = Path.GetFileNameWithoutExtension(item.FileName).Replace("ВНС-", "");
-
-                    fileName += "-" + item.Configuration + "-" + item.Thickness.ToString().Replace(",", ".");
-
-                    if (Path.GetExtension(FileModelPdm.FileName.ToUpper()) == ".SLDPRT")
+                    if (AdapterPdmDB.Instance.IsDxf(item.IDPDM, item.Configuration, item.Version))
                     {
-                        BinaryToDxfFile(binary, fileName, Path.Combine(settings.DxfPath, "Детали"));
+                        byte[] binary = AdapterPdmDB.Instance.GetDXF(item.IDPDM, item.Configuration, item.Version);
+                        string fileName = Path.GetFileNameWithoutExtension(item.FileName).Replace("ВНС-", "");
+
+                        
+                        fileName = DXF.DxfNameBuild(fileName, item.Configuration) + "-" + item.Thickness.ToString().Replace(",", ".");
+
+                        if (Path.GetExtension(FileModelPdm.FileName.ToUpper()) == ".SLDPRT")
+                        {
+                            BinaryToDxfFile(binary, fileName, Path.Combine(settings.DxfPath, "Детали"));
+                        }
+                        else
+                        {
+                            BinaryToDxfFile(binary, fileName, Path.Combine(settings.DxfPath, Path.GetFileNameWithoutExtension(FileModelPdm.FileName)));
+                        }
+                        countIterations++;
                     }
-                    else
-                    {
-                        BinaryToDxfFile(binary, fileName, Path.Combine(settings.DxfPath, Path.GetFileNameWithoutExtension(FileModelPdm.FileName)));
-                    }
-                    countIterations++;
+                }
+                catch (Exception ex)
+                {
+                    MessageObserver.Instance.SetMessage($"Failed to save new dxf files to destination folder.\t" + item.FilePath + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace);
+                    throw ex;
                 }
             }
             MessageObserver.Instance.SetMessage($"Save {countIterations} new dxf files to destination folder");
-            //StatusLabel.Text = "Статус: Выгрузка DXF файлов завершена. Количество выгруженых файлов " + countIterations;
-            //countIterations = 0;
             #endregion
 
             #region clear temp dxf directory
@@ -361,7 +358,18 @@ namespace ExportSLDPRTToDXF
 
         private void BinaryToDxfFile(byte[] inputBinary, string fileName, string directory)
         {
-            string path = Path.Combine(directory, $"{fileName}.dxf");
+            
+            string path = DXF.DxfNameBuild(fileName, "");
+            try
+            {
+                path = Path.Combine(directory, $"{fileName}.dxf");
+            }
+            catch (Exception  ex)
+            {
+                MessageObserver.Instance.SetMessage("BinaryToDxfFile failed to create path.\nfileName " + fileName +";    directory: " + directory);
+                throw ex;
+            }
+
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
             File.WriteAllBytes(path, inputBinary);

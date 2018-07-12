@@ -112,3 +112,8 @@ D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\MessageL
 D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ServiceConstants.pdb
 D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\VentsMaterials2.dll
 D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\VentsMaterials2.pdb
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ExportSLDPRTToDXF.exe.manifest
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\bin\Debug\ExportSLDPRTToDXF.application
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.TrustInfo.xml
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.exe.manifest
+D:\Visual Studio Projects\ExportSLDPRTToDXF\ExportSLDPRTToDXF\obj\Debug\ExportSLDPRTToDXF.application

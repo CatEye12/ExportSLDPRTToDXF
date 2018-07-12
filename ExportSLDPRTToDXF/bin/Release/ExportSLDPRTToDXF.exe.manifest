@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ExportSLDPRTToDXF.exe" version="1.0.1.93" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ExportSLDPRTToDXF.exe" version="1.0.1.15" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ExportSLDPRTToDXF" version="1.0.0.27877" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ExportSLDPRTToDXF" version="1.0.0.26424" language="neutral" processorArchitecture="amd64" />
     <commandLine file="ExportSLDPRTToDXF.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -42,72 +42,108 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Bullzip.PdfWriter.dll" size="108544">
-      <assemblyIdentity name="Bullzip.PdfWriter" version="4.0.0.0" publicKeyToken="041D71CACB6E853C" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataBaseDomian.dll" size="87040">
+      <assemblyIdentity name="DataBaseDomian" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Hq0vdJjd8kiDit4PPzmgcVpO3etez60P3ag8DuhXAxQ=</dsig:DigestValue>
+        <dsig:DigestValue>6XhwJ4lYhLzyL2lnUXnxUvdcSJt6RqTGZOw4sYFG9W4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ExportSLDPRTToDXF.exe" size="79304">
-      <assemblyIdentity name="ExportSLDPRTToDXF" version="1.0.0.27877" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPDM.Interop.epdm.dll" size="235928">
+      <assemblyIdentity name="EPDM.Interop.epdm" version="5.19.0.0" publicKeyToken="0625A0C4BB5DE148" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0TbYbyHm7/VLXCHq00Rpa8QKj4A9e/CJB/2PhlF7EjQ=</dsig:DigestValue>
+        <dsig:DigestValue>TP911KkcIuCiKzaKYb5xIWZZbIZYl3eJa625PqKyZ04=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MessageLibrary.dll" size="6144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ExportSLDPRTToDXF.exe" size="69024">
+      <assemblyIdentity name="ExportSLDPRTToDXF" version="1.0.0.26424" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>LmDjhgQhpSWS1VpZWxgqRDAYWMI/iooIcZqc3oLjdHE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ExportToXMLLib.dll" size="46080">
+      <assemblyIdentity name="ExportToXMLLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>qz3/lSZAwuCPS3V8UfdjHPQmrZL5uGxyLMteSRCWrho=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MessageLibrary.dll" size="6656">
       <assemblyIdentity name="MessageLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>myhOQ3p1xSPngv9To0MWdZud/Ymui7EjUh1ynV8TeIg=</dsig:DigestValue>
+        <dsig:DigestValue>Pnm3wVJzQBdTCCLGvfNwcnR//mv3enrEEMvigOe0sxw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ServiceConstants.dll" size="7680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ServiceConstants.dll" size="8704">
       <assemblyIdentity name="ServiceConstants" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ajG5+S2divVqJwq4weygTIOknmHtX4Xu3pCReodsv3k=</dsig:DigestValue>
+        <dsig:DigestValue>AJLE7OjJju8SviOISlaAzJi2XpPvSUI6gmcqoBZ9UEw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SolidWorksLibrary.dll" size="177152">
-      <assemblyIdentity name="SolidWorksLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SolidWorksLibrary.dll" size="201728">
+      <assemblyIdentity name="SolidWorksLibrary" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qNrLR/FEvG+VmyKTJhYRXMAyK+NaAeWkhMnzSpCZpkI=</dsig:DigestValue>
+        <dsig:DigestValue>hXh2ytYsWD9UuOMMGJdANqi0FNxnIH144WsWVyYCMUI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="ExportSLDPRTToDXF.exe.config" size="3321">
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VentsMaterials2.dll" size="48640">
+      <assemblyIdentity name="VentsMaterials2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>BiEnDZcmcdok2lJqPT6dWisDJp1wfkojDbGosDZIhTQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ExportSLDPRTToDXF.exe.config" size="3397">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>l8Nc1yKg18VJX6l7EVW6QG4x7d1+2Ic7MA5Jyr8aX1k=</dsig:DigestValue>
+      <dsig:DigestValue>hv3/EB5DEp0eDRzrBH3k+cN0OJZbg7YreNHKpHzU4Jw=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
